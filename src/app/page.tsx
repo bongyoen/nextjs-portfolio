@@ -2,6 +2,8 @@ import Image from "next/image";
 import MyButton from "@/src/component/btn";
 
 export default function Home() {
+  console.log("123")
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -39,7 +41,7 @@ export default function Home() {
           priority
         />
       </div>
-      <MyButton />
+      <MyButton />asdasdasd
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a

@@ -1,19 +1,12 @@
 import { NextResponse } from 'next/server';
+import {TodoService} from "@/src/server/service/todo.service";
+import {Provider} from "@/src/server/provider/provider";
 
-// export async function GET(){
-//   const data = {
-//     name: 'Bishal Shrestha',
-//     age: '27'
-//   }
-//
-//   return NextResponse.json({data})
-// }
 
-export const GET = () => {
-  const data = {
-    name: 'Bishal Shrestha',
-    age: '27',
-  };
+export const GET = async () => {
+  const todoService = Provider.getService(TodoService)
+  const content = "이것은 신규";
+  const entity = await todoService.createTodo(content);
 
-  return NextResponse.json({ data });
+  return NextResponse.json({entity});
 };
