@@ -17,7 +17,19 @@ jobs:
 
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .
+
       - name: taging
         run: docker tag nextjs-portfolio:latest kuhj7593/nextjs-portfolio:latest
+
       - name: Push to Dockerhub
         run: docker push kuhj7593/nextjs-portfolio:latest
+
+      - name: deploy
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{secrets.ORACLE_CLOUD_DOMAIN}}
+          username: ${{secrets.ORACLE_CLOUD_USER}}
+          key: ${{secrets.ORACLE_CLOUD_KEY}}
+          script: |
+            sh /home/ubuntu/portfolio/deploy.sh
+
