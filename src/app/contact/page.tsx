@@ -1,11 +1,6 @@
-// 'use client'
-
 import Header from "@/src/components/header/header";
 
-export default function Home() {
-
-    // const isDark = C.useState();
-
+export default function Page() {
     return (
         <>
             <Header/>
@@ -20,4 +15,3 @@ export default function Home() {
         </>
     )
 }
-

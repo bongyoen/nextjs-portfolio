@@ -5,7 +5,7 @@ import {Provider} from "@/src/server/provider/provider";
 
 export const GET = async () => {
   const todoService = Provider.getService(TodoService)
-  const content = "이것은 신규";
+  const content = "이것은 신규1";
   const entity = await todoService.createTodo(content);
 
   return NextResponse.json({entity});

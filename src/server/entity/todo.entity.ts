@@ -5,9 +5,10 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from 'typeorm';
+import {CommonEntity} from "@/src/server/entity/commonEntity";
 
 @Entity('todo')
-export class Todo {
+export class Todo extends CommonEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -23,3 +24,4 @@ export class Todo {
     @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: Date;
 }
+

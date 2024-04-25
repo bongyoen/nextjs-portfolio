@@ -1,9 +1,8 @@
-
-import { ObjectLiteral, Repository } from 'typeorm';
+import {ObjectLiteral, Repository} from 'typeorm';
 import {connectionHolder, getDataSource} from "@/src/server/database/datasource";
 
 interface Class {
-    new (...args: any[]): any;
+    new(...args: any[]): any;
 }
 
 const serviceAsyncProxy = (obj: any) =>
@@ -24,7 +23,7 @@ export class Provider {
     // Repository 와 Service 를 Singleton 으로 관리하는 객채  
     private static repositories: Map<string, Repository<ObjectLiteral>> =
         new Map();
-    
+
     private static services: Map<string, ObjectLiteral> = new Map();
 
     static registerService<T extends ObjectLiteral>(
@@ -49,20 +48,22 @@ export class Provider {
     }
 
     static getService<Service extends ObjectLiteral>(
-        constructor: new (...args: any[]) => Service,
+        constructor: new (...args: any[]) => Service
     ): Service {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        !Provider.services.has(constructor.name) &&
-        Provider.registerService(constructor);
+
+        if (!Provider.services.has(constructor.name))
+            Provider.registerService(constructor);
+
         return Provider.services.get(constructor.name) as Service;
     }
 
     static getRepository<Entity extends Class>(
         constructor: new (...args: any[]) => Entity,
     ): Repository<Entity> {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        !Provider.repositories.has(constructor.name) &&
-        Provider.registerRepository(constructor);
+
+        if (!Provider.services.has(constructor.name))
+            Provider.registerRepository(constructor);
+
         return Provider.repositories.get(constructor.name) as Repository<Entity>;
     }
 }
