@@ -16,7 +16,7 @@ export default function Home() {
                             </span>
                             <br/>
                             <div className="w-max my-7">
-                                <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-8 border-r-black pr-10 text-6xl text-black font-bold dark:text-white">
+                                <h1 className="md:text-2xl lg:text-6xl animate-typing overflow-hidden whitespace-nowrap border-r-8 border-r-black pr-10  text-black font-bold dark:text-white">
                                     웹 개발자 입니다.
                                 </h1>
                             </div>
@@ -54,11 +54,13 @@ export default function Home() {
                             </a></div>
 
                     </div>
-                    <div
-                        className="border-7 border-8 rounded-full p-6  overflow-auto bg-white shadow-[inset_0_0_15px_5px_#62b0cb]">
-                        {/* <div className="absolute inset-0 bg-white opacity-75 rounded-lg blur"/> */}
-                        <Image className="rounded-full object-contain" objectFit="cover" src={MePng}
-                               alt="logo"/>
+                    <div className={"hidden md:block"}>
+                        <div
+                            className="border-7 border-8 rounded-full p-6  overflow-auto bg-white shadow-[inset_0_0_15px_5px_#62b0cb]">
+                            {/* <div className="absolute inset-0 bg-white opacity-75 rounded-lg blur"/> */}
+                            <Image className="rounded-full object-contain" objectFit="cover" src={MePng}
+                                   alt="logo"/>
+                        </div>
                     </div>
                     {/*<div*/}
                     {/*    className="hidden relative md:flex w-full max-w-xs overflow-hidden rounded-full p-4 mx-auto my-4 dark:border-secondary lg:mx-0 bg-accent">*/}
