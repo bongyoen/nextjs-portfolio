@@ -66,8 +66,47 @@ body {
     background-color: hsl(var(--primary));
 }
 
+#carousel > div {
+    display: -webkit-box;
+
+    div {
+        animation: no1 0.5s linear 1;
+
+    }
+}
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;
     }
 }
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mySwiper {
+    width: 800px;
+}
+
+

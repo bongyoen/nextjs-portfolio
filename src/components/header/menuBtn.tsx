@@ -8,7 +8,6 @@ type BtnProps = {
 
 export default function MenuBtn({link, children}: BtnProps) {
     const router = usePathname();
-    console.log(router)
 
     let isTarget = false;
     if (typeof children === 'string' && router === link.toLocaleLowerCase()) {
