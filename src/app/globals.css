@@ -105,8 +105,12 @@ body {
     object-fit: cover;
 }
 
-.mySwiper {
-    width: 800px;
+.swiper-slide {
+    /*width: 800px;*/
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
 }
 
 

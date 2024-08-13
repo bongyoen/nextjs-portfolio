@@ -1,7 +1,7 @@
 import Base from "@/src/components/base";
 import Image from "next/image";
 import {UNION_STR} from "@/src/components/util/UNION_STR";
-import ProjectItem from "@/src/components/projectItem";
+import ProjectItem from "@/src/components/cmmn/projectItem";
 
 export default function Projects() {
     return (

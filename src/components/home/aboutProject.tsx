@@ -19,7 +19,7 @@ export default function AboutProject() {
                 </button>
             </a>
             </div>
-            <div className="w-6/12 h-56 bg-blue-500">
+            <div className="w-6/12 h-56 bg-blue-500 ">
                 <MainSlider/>
             </div>
         </section>
