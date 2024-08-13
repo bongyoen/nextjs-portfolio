@@ -1,4 +1,4 @@
-import MainSlider from "@/swiper/userSwiper";
+import MainSlider from "@/src/swiper/userSwiper";
 
 export default function AboutProject() {
 
