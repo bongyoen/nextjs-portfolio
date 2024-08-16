@@ -21,7 +21,7 @@ jobs:
           AUTH_PASS: ${{secrets.AUTH_PASS}}
         run: |
           echo "AUTH_USER=AUTH_USER" >> .env.local
-          echo "AUTH_USER=AUTH_USER" >> .env.local
+          echo "AUTH_PASS=AUTH_PASS" >> .env.local
 
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .
