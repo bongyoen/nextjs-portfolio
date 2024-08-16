@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: ['master']
+    branches: [ 'master' ]
 
 jobs:
   build:
@@ -14,6 +14,14 @@ jobs:
           DOCKER_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
           DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+      - name: Generate Environment Variables File for Production
+        env:
+          AUTH_USER: ${{secrets.AUTH_USER}}
+          AUTH_PASS: ${{secrets.AUTH_PASS}}
+        run: |
+          echo "REACT_APP_DOMAIN=$REACT_APP_DOMAIN" >> .env.local
+          echo "REACT_APP_DEBUG=$REACT_APP_DEBUG" >> .env.local
 
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .

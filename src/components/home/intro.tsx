@@ -14,6 +14,7 @@ export default function Intro() {
 						<span className={`
                 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text font-bold text-transparent
       `}>
+				{process.env.DB_HOST}
 							안녕하세요, 저는
 						</span>
 						<br />
