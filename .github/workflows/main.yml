@@ -20,9 +20,10 @@ jobs:
           AUTH_USER: ${{secrets.AUTH_USER}}
           AUTH_PASS: ${{secrets.AUTH_PASS}}
         run: |
+          echo "AUTH_USER=${{secrets.AUTH_USER}}" >> .env.local
+          echo "AUTH_PASS=${{secrets.AUTH_PASS}}" >> .env.local
           ls -al
-          echo "AUTH_USER=$AUTH_USER" >> .env.local
-          echo "AUTH_PASS=$AUTH_PASS" >> .env.local
+          cat .env.local
 
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .
