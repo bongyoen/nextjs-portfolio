@@ -20,8 +20,10 @@ jobs:
           AUTH_USER: ${{secrets.AUTH_USER}}
           AUTH_PASS: ${{secrets.AUTH_PASS}}
         run: |
-          echo "REACT_APP_DOMAIN=$REACT_APP_DOMAIN" >> .env.local
-          echo "REACT_APP_DEBUG=$REACT_APP_DEBUG" >> .env.local
+          echo "AUTH_USER=AUTH_USER" >> .env.local
+          echo "AUTH_USER=AUTH_USER" >> .env.local
+          echo "AUTH_USER=AUTH_USER" >> nextjs-portfolio/.env.local
+          echo "AUTH_USER=AUTH_USER" >> nextjs-portfolio/.env.local
 
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .
