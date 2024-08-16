@@ -16,8 +16,7 @@ export const POST = async (request: NextRequest) => {
     <p>보낸사람 : TEST</p>
     `,
 	};
-	console.log('도달1', process.env.AUTH_USER);
-	console.log('도달1', process.env.AUTH_PASS);
+	console.log('도달1');
 	await transporter.sendMail(mailData);
 	console.log('도달2');
 	return NextResponse.redirect(new URL('/contact?ok', request.url));

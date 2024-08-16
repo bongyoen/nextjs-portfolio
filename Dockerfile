@@ -11,7 +11,7 @@ COPY next.config.mjs .
 COPY postcss.config.mjs .
 COPY tailwind.config.ts .
 COPY tsconfig.json .
-COPY .env.local .
+COPY .env.production .
 
 RUN npm run build
 
