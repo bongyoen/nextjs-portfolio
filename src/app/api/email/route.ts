@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 export const POST = async (request: NextRequest) => {
 	const mailData: Mail.Options = {
