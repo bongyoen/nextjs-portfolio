@@ -36,6 +36,7 @@
     "react-dom": "^18",
     "react-notion-x": "^6.16.0",
     "reflect-metadata": "^0.2.2",
+    "sharp": "^0.33.4",
     "styled-components": "^6.1.8",
     "swiper": "^11.1.1",
     "tailwind-merge": "^2.3.0",
