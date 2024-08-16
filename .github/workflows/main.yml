@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
 
 jobs:
   build:
@@ -32,4 +32,3 @@ jobs:
           key: ${{secrets.ORACLE_CLOUD_KEY}}
           script: |
             sh /home/ubuntu/portfolio/deploy.sh
-
