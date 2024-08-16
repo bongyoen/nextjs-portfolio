@@ -22,8 +22,6 @@ jobs:
         run: |
           echo "AUTH_USER=AUTH_USER" >> .env.local
           echo "AUTH_USER=AUTH_USER" >> .env.local
-          echo "AUTH_USER=AUTH_USER" >> nextjs-portfolio/.env.local
-          echo "AUTH_USER=AUTH_USER" >> nextjs-portfolio/.env.local
 
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .
