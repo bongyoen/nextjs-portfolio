@@ -32,9 +32,20 @@ export default function Projects() {
 								mainTag="Electron"
 								img={UNION_STR.project.autoAd.imgSrc}
 								notion={UNION_STR.project.autoAd.notion}
-								hashTags={['Electron', 'SqlLite']}
+								hashTags={['Electron', 'SqlLite', 'React', 'Ts']}
 							>
 								네이버 파워링크 자동 입찰 서비스
+							</ProjectItem>
+
+							<ProjectItem
+								alt={UNION_STR.project.vpn.nm}
+								type="업무"
+								mainTag="Ubuntu"
+								img={UNION_STR.project.vpn.imgSrc}
+								notion={UNION_STR.project.vpn.notion}
+								hashTags={['Ubuntu', 'OpenVpn', 'StrongSwan', 'Iptables', 'L2tpd', 'Pptpd', 'Tc']}
+							>
+								PPTP, L2TP, OVPN, IKEv2 연결방식을 지원하는 VPN 서비스 시스템
 							</ProjectItem>
 							<ProjectItem
 								alt={UNION_STR.project.login.nm}
@@ -65,18 +76,8 @@ export default function Projects() {
 								Cloud Plaform을 통한 nextJs 포트폴리오 사이트
 							</ProjectItem>
 							<ProjectItem
-								alt={UNION_STR.project.vpn.nm}
-								type="업무"
-								mainTag="Ubuntu"
-								img={UNION_STR.project.vpn.imgSrc}
-								notion={UNION_STR.project.vpn.notion}
-								hashTags={['Ubuntu', 'OpenVpn', 'StrongSwan', 'Iptables', 'L2tpd', 'Pptpd', 'Tc']}
-							>
-								PPTP, L2TP, OVPN, IKEv2 연결방식을 지원하는 VPN 서비스 시스템
-							</ProjectItem>
-							<ProjectItem
 								alt={UNION_STR.project.mouse.nm}
-								type="업무"
+								type="개인"
 								mainTag="Flutter"
 								img={UNION_STR.project.mouse.imgSrc}
 								notion={UNION_STR.project.mouse.notion}

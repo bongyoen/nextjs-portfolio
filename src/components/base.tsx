@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 import Header from '@/src/components/header/header';
 import Footer from '@/src/components/footer/footer';
 import * as Modal from '@/src/bloc/modal';
@@ -14,6 +14,30 @@ export default function Base({ children }: { children: ReactNode }) {
 	const state = Modal.useState();
 	const close = () => bloc.next(Modal.close);
 
+	const notionScrollRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		notionScrollRef.current?.scrollTo({ left: 0, top: 0 });
+		const prevScrollY = preventScroll();
+		if (!state.openYn) allowScroll(prevScrollY);
+	}, [state]);
+
+	const preventScroll = () => {
+		const currentScrollY = window.scrollY;
+		document.body.style.position = 'fixed';
+		document.body.style.width = '100%';
+		document.body.style.top = `-${currentScrollY}px`; // 현재 스크롤 위치
+		document.body.style.overflowY = 'scroll';
+		return currentScrollY;
+	};
+
+	const allowScroll = (prevScrollY: number) => {
+		document.body.style.position = '';
+		document.body.style.width = '';
+		document.body.style.top = '';
+		document.body.style.overflowY = '';
+		window.scrollTo(0, prevScrollY);
+	};
 	return (
 		<>
 			<div
@@ -31,6 +55,7 @@ export default function Base({ children }: { children: ReactNode }) {
 						-translate-y-1/2 transform overflow-auto bg-red-400 text-center
 					`}
 					onClick={(e) => e.stopPropagation()}
+					ref={notionScrollRef}
 				>
 					{state.notionPage != null ? (
 						<main>

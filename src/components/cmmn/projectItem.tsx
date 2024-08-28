@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { ReactNode } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import * as Modal from '../../bloc/modal';
-import { usePathname, useRouter } from 'next/navigation';
-import useSWR from 'swr';
 
 type ProjectType = '개인' | '업무';
 
@@ -53,16 +51,6 @@ export default function ProjectItem({
 			}}
 		>
 			<div className="relative">
-				{/* 현재 state: {`${state.openYn}`} */}
-
-				{/* <button onClick={open}> */}
-				{/* 	open */}
-				{/* </button> */}
-				{/* <button onClick={close}> */}
-				{/* 	close */}
-				{/* </button> */}
-
-				{/* <a href="https://github.com/woongsnote/woongsnote-dev" target="_blank" rel="noreferrer"> */}
 				<div
 					className={`
 						bg-card text-card-foreground group relative mx-auto max-w-sm
@@ -120,7 +108,6 @@ export default function ProjectItem({
 						</div>
 					</div>
 				</div>
-				{/* </a> */}
 			</div>
 		</div>
 	);
