@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import developerImg from '@/src/styles/developer.png';
-import { useState } from 'react';
-import { UNION_STR } from '@/src/components/util/UNION_STR';
+import developerImg from '@imgs/developer.png';
+import React, { useState } from 'react';
+import { UNION_STR } from '@/src/components/model/UNION_STR';
 
 type BtnSelecType = {
 	target: 1 | 2 | 3;

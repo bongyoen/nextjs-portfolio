@@ -27,7 +27,7 @@
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.9.0",
     "lucide-react": "^0.374.0",
-    "next": "14.2.1",
+    "next": "14.2.10",
     "next-themes": "^0.3.0",
     "nodemailer": "^6.9.14",
     "notion-client": "^6.16.0",
@@ -44,6 +44,7 @@
     "typeorm": "^0.3.20"
   },
   "devDependencies": {
+    "@types/navermaps": "^3.7.8",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",

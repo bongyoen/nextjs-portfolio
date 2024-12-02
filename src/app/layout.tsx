@@ -14,9 +14,23 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
 	return (
 		<html lang="ko" className="h-full" suppressHydrationWarning>
-			<body className={`${inter.className} bg-none h-full dark:bg-slate-800`}>
-				<ThemeProvider>{children}</ThemeProvider>
-			</body>
+
+		<body className={`
+			${inter.className}
+			h-full bg-none
+			dark:bg-slate-800
+		`}>
+		<ThemeProvider>{children}</ThemeProvider>
+		</body>
+		{/* <body className={`${inter.className} bg-none h-full dark:bg-slate-800`}> */}
+		{/* <ThemeProvider>{children}</ThemeProvider> */}
+
+		{/* <div id="map" style={{ width: '100%', height: '400px' }} /> */}
+
+		{/* <script> */}
+
+		{/* </script> */}
+		{/* </body> */}
 		</html>
 	);
 }

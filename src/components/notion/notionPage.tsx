@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { NotionRenderer } from 'react-notion-x';
 
 interface RendererProps {

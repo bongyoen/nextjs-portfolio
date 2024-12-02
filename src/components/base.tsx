@@ -8,6 +8,7 @@ import NotionPage from '@/src/components/notion/notionPage';
 import 'react-notion-x/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css';
 import 'katex/dist/katex.min.css';
+import React from 'react';
 
 export default function Base({ children }: { children: ReactNode }) {
 	const bloc = Modal.useBloc();

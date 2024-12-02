@@ -1,4 +1,6 @@
-import MainSlider from '@/src/swiper/userSwiper';
+// import MainSlider from '@/src/swiper/userSwiper';
+import MainSlider from '../../swiper/userSwiper';
+import React from 'react';
 
 export default function AboutProject() {
 	return (
@@ -41,7 +43,7 @@ export default function AboutProject() {
 					</button>
 				</a>
 			</div>
-			<div className={`h-56 w-6/12 bg-blue-500`}>
+			<div className={`h-56 w-6/12 rounded-3xl bg-blue-500`}>
 				<MainSlider />
 			</div>
 		</section>

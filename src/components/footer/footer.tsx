@@ -1,4 +1,4 @@
-import { UNION_STR } from '@/src/components/util/UNION_STR';
+import { UNION_STR } from '@/src/components/model/UNION_STR';
 
 export default function Footer() {
 	return (

@@ -1,17 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import * as Modal from '../../bloc/modal';
+import { ProjectWkType } from '@/src/components/model/UNION_STR';
 
-type ProjectType = '개인' | '업무';
 
 type ProjectItemType = {
 	alt: string;
 	img: StaticImport;
 	children: ReactNode;
-	type: ProjectType;
+	type: ProjectWkType;
 	mainTag: string;
 	hashTags: string[];
 	notion: string;
@@ -47,7 +47,7 @@ export default function ProjectItem({
 				focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
 			`}
 			style={{
-				animationDuration: '0s;',
+				animationDuration: '0s',
 			}}
 		>
 			<div className="relative">
@@ -73,7 +73,7 @@ export default function ProjectItem({
 									`}
 									src={img}
 									style={{
-										color: ' transparent;',
+										color: ' transparent',
 									}}
 								/>
 							</button>

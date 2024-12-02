@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import imgLogo from '@/src/styles/logo.png';
+import imgLogo from '@imgs/logo.png';
 
 export default function HeaderIcon() {
 	return (

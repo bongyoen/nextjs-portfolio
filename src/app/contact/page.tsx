@@ -1,7 +1,7 @@
 import Base from '@/src/components/base';
 import Image from 'next/image';
 import ContactImg from '@/src/styles/contact.svg';
-import { UNION_STR } from '@/src/components/util/UNION_STR';
+import { UNION_STR } from '@/src/components/model/UNION_STR';
 
 export default function Contact() {
 	return (
@@ -28,7 +28,7 @@ export default function Contact() {
 						data-nimg="1"
 						className="h-72 w-72 rounded-xl"
 						src={ContactImg}
-						style={{ color: 'transparent;' }}
+						style={{ color: 'transparent' }}
 					/>
 				</div>
 			</section>
