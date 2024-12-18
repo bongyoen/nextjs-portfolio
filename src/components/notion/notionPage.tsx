@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { NotionRenderer } from 'react-notion-x';
+import '../notion/notion1.scss';
 
 interface RendererProps {
 	recordMap: any; // 임의로 any
