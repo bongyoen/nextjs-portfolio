@@ -15,12 +15,13 @@ jobs:
         run: |
           echo "AUTH_USER=$AUTH_USER" >> .env.production
           echo "AUTH_PASS=$AUTH_PASS" >> .env.production
+          tar -czf env.tar.gz .env.production
 
       - name: Upload Environment Variables Archive
         uses: actions/upload-artifact@v3
         with:
           name: env-file
-          path: .env.production
+          path: env.tar.gz
 
   build-and-push:
     runs-on: ubuntu-latest
@@ -31,6 +32,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: env-file
+
+      - name: Extract Environment Variables
+        run: |
+          tar -xzf env.tar.gz
 
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .
