@@ -27,16 +27,18 @@ jobs:
           echo "AUTH_USER=$AUTH_USER" >> .env.production
           echo "AUTH_PASS=$AUTH_PASS" >> .env.production
           tar -czf env.tar.gz .env.production
-          mv env.tar.gz $GITHUB_WORKSPACE/
 
   build-and-push:
     runs-on: ubuntu-latest
     needs: set-variables
     steps:
       - uses: actions/checkout@v3
+      - name: Download Environment Variables Archive
+        run: |
+          cp ../set-variables/env.tar.gz ./
       - name: Extract Environment Variables
         run: |
-          tar -xzf $GITHUB_WORKSPACE/env.tar.gz
+          tar -xzf env.tar.gz
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .
 
