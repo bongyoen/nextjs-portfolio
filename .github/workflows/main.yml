@@ -17,6 +17,7 @@ jobs:
 
   set-variables:
     runs-on: ubuntu-latest
+    needs: login-docker
     steps:
       - name: Generate Environment Variables File for Production
         env:
@@ -28,7 +29,7 @@ jobs:
 
   build-and-push:
     runs-on: ubuntu-latest
-    needs: login-docker
+    needs: set-variables
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
