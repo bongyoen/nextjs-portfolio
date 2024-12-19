@@ -5,7 +5,7 @@ on:
     branches: [ 'master' ]
 
 jobs:
-  build:
+  login-docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,6 +15,9 @@ jobs:
           DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
+  set-variables:
+    runs-on: ubuntu-latest
+    steps:
       - name: Generate Environment Variables File for Production
         env:
           AUTH_USER: ${{secrets.AUTH_USER}}
@@ -22,8 +25,10 @@ jobs:
         run: |
           echo "AUTH_USER=$AUTH_USER" >> .env.production
           echo "AUTH_PASS=$AUTH_PASS" >> .env.production
-          ls -al
 
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
       - name: Build the Docker image
         run: docker build -t nextjs-portfolio .
 
@@ -33,6 +38,9 @@ jobs:
       - name: Push to Dockerhub
         run: docker push kuhj7593/nextjs-portfolio:latest
 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: deploy
         uses: appleboy/ssh-action@v0.1.8
         with:
