@@ -16,6 +16,7 @@
 
 - `Tailwind CSS` 기반 반응형 UI
 - `Dark` 모드 지원
+- `Notion` 랜더러 지원
 
 ---
 
