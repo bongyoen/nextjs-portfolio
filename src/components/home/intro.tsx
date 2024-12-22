@@ -90,7 +90,7 @@ export default function Intro() {
 								</svg>
 							</button>
 						</a>
-						<a href="" className="flex items-center">
+						<a href="/개발자 김봉연 이력서.pdf" download className="flex items-center">
 							<button
 								type="button"
 								className={`
