@@ -22,7 +22,11 @@ type OACtion = {
 };
 export const close: Action = (_b, next) => next({ openYn: false });
 export const open = async ({ b, next, notion }: OACtion) => {
-	return next({ openYn: true, notionPage: (await About(notion)) as ExtendedRecordMap });
+	return next({
+		openYn: true,
+		notionPage: (await About(notion)) as ExtendedRecordMap,
+		pageId: notion,
+	});
 };
 
 export class ModalBloc extends Bloc<ModalState> {

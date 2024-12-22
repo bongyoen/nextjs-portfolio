@@ -19,26 +19,13 @@ export default function Base({ children }: { children: ReactNode }) {
 
 	useEffect(() => {
 		notionScrollRef.current?.scrollTo({ left: 0, top: 0 });
-		const prevScrollY = preventScroll();
-		if (!state.openYn) allowScroll(prevScrollY);
+
+		if (!state.openYn) {
+			document.body.style.overflow = 'auto';
+		} else {
+			document.body.style.overflow = 'hidden';
+		}
 	}, [state]);
-
-	const preventScroll = () => {
-		const currentScrollY = window.scrollY;
-		document.body.style.position = 'fixed';
-		document.body.style.width = '100%';
-		document.body.style.top = `-${currentScrollY}px`; // 현재 스크롤 위치
-		document.body.style.overflowY = 'scroll';
-		return currentScrollY;
-	};
-
-	const allowScroll = (prevScrollY: number) => {
-		document.body.style.position = '';
-		document.body.style.width = '';
-		document.body.style.top = '';
-		document.body.style.overflowY = '';
-		window.scrollTo(0, prevScrollY);
-	};
 	return (
 		<>
 			<div
@@ -60,7 +47,10 @@ export default function Base({ children }: { children: ReactNode }) {
 				>
 					{state.notionPage != null ? (
 						<main>
-							<NotionPage recordMap={state.notionPage} rootPageId={state.pageId!} />
+							<NotionPage
+								recordMap={state.notionPage}
+								rootPageId={state.pageId!}
+							/>
 						</main>
 					) : (
 						<></>

@@ -6,7 +6,6 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import * as Modal from '../../bloc/modal';
 import { ProjectWkType } from '@/src/components/model/UNION_STR';
 
-
 type ProjectItemType = {
 	alt: string;
 	img: StaticImport;

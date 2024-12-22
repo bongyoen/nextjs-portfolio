@@ -113,3 +113,7 @@ body {
 .notion-text {
 	text-align: left;
 }
+
+.impr-mb-3 {
+	@apply mb-3 !important;
+}
