@@ -12,9 +12,13 @@ jobs:
         env:
           AUTH_USER: ${{secrets.AUTH_USER}}
           AUTH_PASS: ${{secrets.AUTH_PASS}}
+          NOTION_TOKEN: ${{secrets.NOTION_TOKEN}}
+          NOTION_DATABASE_ID: ${{secrets.NOTION_DATABASE_ID}}
         run: |
           echo "AUTH_USER=$AUTH_USER" >> .env.production
           echo "AUTH_PASS=$AUTH_PASS" >> .env.production
+          echo "NOTION_TOKEN=$NOTION_TOKEN" >> .env.production
+          echo "NOTION_DATABASE_ID=$NOTION_DATABASE_ID" >> .env.production
           tar -czf env.tar.gz .env.production
 
       - name: Upload Environment Variables Archive
