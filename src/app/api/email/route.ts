@@ -24,6 +24,8 @@ export const POST = async (request: NextRequest) => {
 
 	await transporter.sendMail(mailData);
 	const redirectUrl = new URL('/contact?issend=ok', `${process.env.BASE_URL}`);
+	console.log('BASE_URL :', `${process.env.BASE_URL}`);
+	console.log('redirectUrl :', redirectUrl);
 	return NextResponse.redirect(redirectUrl);
 };
 
