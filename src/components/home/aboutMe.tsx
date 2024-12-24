@@ -384,9 +384,9 @@ export default function AboutMe() {
 										<h4 className="border-b text-xl font-bold">Skills</h4>
 										<Skills skills={SKILLS} />
 									</div>
-									<div className="mt-2 flex flex-col gap-y-4">
+									<div className="flex flex-col gap-y-4">
 										<h4 className="border-b text-xl font-bold">Tools</h4>
-										<div className="flex gap-x-2">
+										<div className={`grid grid-cols-3 text-center`}>
 											<span className="rounded-full border-2 px-2 font-bold">VsCode</span>
 											<span className="rounded-full border-2 px-2 font-bold">IntelliJ</span>
 											<span className="rounded-full border-2 px-2 font-bold">WebStorm</span>
