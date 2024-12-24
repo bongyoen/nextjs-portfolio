@@ -1,4 +1,4 @@
-import { DarkBtn } from '@/src/components/darkBtn';
+import { DarkBtn } from '@/src/components/cmmn/darkBtn';
 import MenuBtn from '@/src/components/header/menuBtn';
 
 export default function HeaderMenu() {

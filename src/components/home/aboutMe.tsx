@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import developerImg from '@imgs/developer.png';
 import React, { useState } from 'react';
-import { UNION_STR } from '@/src/model/UNION_STR';
+import { SKILLS, UNION_STR } from '@/src/model/UNION_STR';
+import Skills from '@/src/components/home/skills';
 
 type BtnSelecType = {
 	target: 1 | 2 | 3;
@@ -381,24 +382,16 @@ export default function AboutMe() {
 									/>
 									<div className="flex flex-col gap-y-4">
 										<h4 className="border-b text-xl font-bold">Skills</h4>
-										<div className="bg-accent group rounded-md p-2">
-											<span className="text-lg font-bold leading-none">React</span>
-											<p className="keep-all text-sm">
-												CRA 나 Vite, Next.js 등의 라이브러리를 사용해서 웹사이트를 구현할 수
-												있습니다.
-											</p>
-										</div>
-										<div className="bg-accent group rounded-md p-2">
-											<span className="text-lg font-bold leading-none">CSS Framework</span>
-											<p className="keep-all text-sm">
-												TailwindCSS, Styled Component 등을 사용할 수 있습니다.
-											</p>
-										</div>
+										<Skills skills={SKILLS} />
 									</div>
 									<div className="mt-2 flex flex-col gap-y-4">
 										<h4 className="border-b text-xl font-bold">Tools</h4>
 										<div className="flex gap-x-2">
 											<span className="rounded-full border-2 px-2 font-bold">VsCode</span>
+											<span className="rounded-full border-2 px-2 font-bold">IntelliJ</span>
+											<span className="rounded-full border-2 px-2 font-bold">WebStorm</span>
+											<span className="rounded-full border-2 px-2 font-bold">DataGrip</span>
+											<span className="rounded-full border-2 px-2 font-bold">Figma</span>
 											<span className="rounded-full border-2 px-2 font-bold">Notion</span>
 											<span className="rounded-full border-2 px-2 font-bold">Slack</span>
 										</div>

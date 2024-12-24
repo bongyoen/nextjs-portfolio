@@ -108,3 +108,44 @@ export const UNION_STR: unionStrType = {
 } as const;
 
 export const PJ_MAP = JSON.parse(JSON.stringify(UNION_STR.project));
+
+export type SkillLevelType = 'strong' | 'knowledgeable' | 'experienced';
+
+export type SkillType = {
+	skill: string;
+	skillDesc: string;
+	skillType: SkillLevelType;
+};
+
+export type SkillCategories = { [key in SkillLevelType]: SkillType[] };
+
+export const SKILLS: SkillType[] = [
+	{ skill: 'TypeScript', skillDesc: '', skillType: 'strong' },
+	{ skill: 'JavaScript', skillDesc: '', skillType: 'strong' },
+	{ skill: 'Java', skillDesc: '', skillType: 'strong' },
+	{ skill: 'Angular', skillDesc: '', skillType: 'strong' },
+	{ skill: 'JPA', skillDesc: '', skillType: 'strong' },
+	{ skill: 'Maria DB', skillDesc: '', skillType: 'strong' },
+	{ skill: 'MY-SQL', skillDesc: '', skillType: 'strong' },
+	{ skill: 'CSS3', skillDesc: '', skillType: 'strong' },
+	{ skill: 'HTML5', skillDesc: '', skillType: 'strong' },
+	{ skill: 'Spring Boot', skillDesc: '', skillType: 'strong' },
+	{ skill: 'Spring Framework', skillDesc: '', skillType: 'strong' },
+	{ skill: 'MyBatis', skillDesc: '', skillType: 'strong' },
+
+	{ skill: 'Docker', skillDesc: '', skillType: 'knowledgeable' },
+	{ skill: 'React', skillDesc: '', skillType: 'knowledgeable' },
+	{ skill: 'NextJs', skillDesc: '', skillType: 'knowledgeable' },
+	{ skill: 'Flutter', skillDesc: '', skillType: 'knowledgeable' },
+	{ skill: 'Amazon EC2', skillDesc: '', skillType: 'knowledgeable' },
+	{ skill: 'Electron', skillDesc: '', skillType: 'knowledgeable' },
+	{ skill: 'Ubuntu', skillDesc: '', skillType: 'knowledgeable' },
+	{ skill: 'PostgreSQL', skillDesc: '', skillType: 'knowledgeable' },
+	{ skill: 'GitHub', skillDesc: '', skillType: 'knowledgeable' },
+
+	{ skill: 'Amazon RDS', skillDesc: '', skillType: 'experienced' },
+	{ skill: 'Amazon Amplify', skillDesc: '', skillType: 'experienced' },
+	{ skill: 'Oracle DB', skillDesc: '', skillType: 'experienced' },
+	{ skill: 'Nest', skillDesc: '', skillType: 'experienced' },
+	{ skill: 'Jenkins', skillDesc: '', skillType: 'experienced' },
+];

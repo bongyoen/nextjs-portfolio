@@ -56,9 +56,6 @@ export default function ProjectItem({
 						<div className="relative flex h-52 w-full items-center justify-center">
 							<nav>
 								<Link className={'flex w-full flex-row justify-around'} href={notionLink}>
-									{/* <nav> */}
-									{/* 	<Link href="/login">Open modal</Link> */}
-									{/* </nav> */}
 									<Image
 										alt={alt}
 										width="200"

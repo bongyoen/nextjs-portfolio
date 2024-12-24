@@ -7,7 +7,7 @@ import {
 import { ExtendedRecordMap } from 'notion-types';
 import { NotionRenderer } from 'react-notion-x';
 import React, { useEffect, useRef } from 'react';
-import Loading from '@/src/components/loading';
+import Loading from '@/src/components/cmmn/loading';
 import { useRouter } from 'next/navigation';
 
 type NotinoRenderType = {
