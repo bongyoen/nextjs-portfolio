@@ -16,18 +16,18 @@ export default function AboutMe() {
 		<section className="flex w-full flex-col gap-y-6 px-2 py-20">
 			<h2
 				className={`
-				text-center text-3xl font-black drop-shadow-lg
-				lg:text-5xl
-			`}
+					text-center text-3xl font-black drop-shadow-lg
+					lg:text-5xl
+				`}
 			>
 				저를 소개합니다.
 			</h2>
 			<div className="flex justify-center">
 				<div
 					className={`
-					hidden flex-1 items-center justify-center
-					lg:flex
-				`}
+						hidden flex-1 items-center justify-center
+						lg:flex
+					`}
 				>
 					<Image
 						alt="About Image"
@@ -114,9 +114,9 @@ export default function AboutMe() {
 						</div>
 						<div
 							className={`
-							mt-20
-							lg:mt-8
-						`}
+								mt-20
+								lg:mt-8
+							`}
 						>
 							{btnSelect.target === 1 && (
 								<div
@@ -150,15 +150,15 @@ export default function AboutMe() {
 									</div>
 									<div
 										className={`
-										mb-12 mt-4 grid gap-4
-										xl:grid-cols-2
-									`}
+											mb-12 mt-4 grid gap-4
+											xl:grid-cols-2
+										`}
 									>
 										<div
 											className={`
-											mx-auto flex w-full items-center gap-x-4 text-start
-											xl:mx-0
-										`}
+												mx-auto flex w-full items-center gap-x-4 text-start
+												xl:mx-0
+											`}
 										>
 											<span className="text-primary">
 												<svg
@@ -182,9 +182,9 @@ export default function AboutMe() {
 										</div>
 										<div
 											className={`
-											mx-auto flex w-full items-center gap-x-4 text-start
-											xl:mx-0
-										`}
+												mx-auto flex w-full items-center gap-x-4 text-start
+												xl:mx-0
+											`}
 										>
 											<span className="text-primary">
 												<svg
@@ -208,9 +208,9 @@ export default function AboutMe() {
 										</div>
 										<div
 											className={`
-											mx-auto flex w-full items-center gap-x-4 text-start
-											xl:mx-0
-										`}
+												mx-auto flex w-full items-center gap-x-4 text-start
+												xl:mx-0
+											`}
 										>
 											<span className="text-primary">
 												<svg
@@ -248,9 +248,9 @@ export default function AboutMe() {
 										</div>
 										<div
 											className={`
-											mx-auto flex w-full items-center gap-x-4 text-start
-											xl:mx-0
-										`}
+												mx-auto flex w-full items-center gap-x-4 text-start
+												xl:mx-0
+											`}
 										/>
 									</div>
 								</div>
@@ -259,9 +259,9 @@ export default function AboutMe() {
 							{btnSelect.target === 2 && (
 								<div
 									className={`
-									grid gap-4
-									lg:grid-cols-2
-								`}
+										grid gap-4
+										lg:grid-cols-2
+									`}
 								>
 									<div>
 										<div className="text-primary flex items-center gap-x-4 text-lg">
@@ -288,8 +288,8 @@ export default function AboutMe() {
 										<ul className="mt-2 flex flex-col gap-y-4 ">
 											<li
 												className={`
-												bg-accent group flex flex-col gap-x-8 rounded-lg p-2 pl-4
-											`}
+													bg-accent group flex flex-col gap-x-8 rounded-lg p-2 pl-4
+												`}
 											>
 												<span className="mb-2 text-xl font-semibold leading-none">유아이컴</span>
 												<span className="text-muted-foreground mb-4 text-lg leading-none">
@@ -299,8 +299,8 @@ export default function AboutMe() {
 											</li>
 											<li
 												className={`
-												bg-accent group flex flex-col gap-x-8 rounded-lg p-2 pl-4
-											`}
+													bg-accent group flex flex-col gap-x-8 rounded-lg p-2 pl-4
+												`}
 											>
 												<span className="mb-2 text-xl font-semibold leading-none">
 													이원커뮤니케이션
@@ -335,8 +335,8 @@ export default function AboutMe() {
 										<ul className="mt-2 flex flex-col gap-y-4 ">
 											<li
 												className={`
-												bg-accent group flex flex-col gap-x-8 rounded-lg p-2 pl-4
-											`}
+													bg-accent group flex flex-col gap-x-8 rounded-lg p-2 pl-4
+												`}
 											>
 												<span className="mb-2 text-xl font-semibold leading-none">
 													kh정보교육원
@@ -349,8 +349,8 @@ export default function AboutMe() {
 											</li>
 											<li
 												className={`
-												bg-accent group flex flex-col gap-x-8 rounded-lg p-2 pl-4
-											`}
+													bg-accent group flex flex-col gap-x-8 rounded-lg p-2 pl-4
+												`}
 											>
 												<span className="mb-2 text-xl font-semibold leading-none">목원대학교</span>
 												<span className="text-muted-foreground mb-4 text-lg leading-none">
@@ -366,25 +366,25 @@ export default function AboutMe() {
 							{btnSelect.target === 3 && (
 								<div
 									className={`
-									ring-offset-background
-									focus-visible:ring-ring
-									mt-2
-									focus-visible:outline-none focus-visible:ring-2
-									focus-visible:ring-offset-2
-								`}
+										ring-offset-background
+										focus-visible:ring-ring
+										mt-2
+										focus-visible:outline-none focus-visible:ring-2
+										focus-visible:ring-offset-2
+									`}
 								>
 									<div
 										className={`
-										text-center
-										xl:text-start
-									`}
+											text-center
+											xl:text-start
+										`}
 									/>
 									<div className="flex flex-col gap-y-4">
 										<h4 className="border-b text-xl font-bold">Skills</h4>
 										<div className="bg-accent group rounded-md p-2">
 											<span className="text-lg font-bold leading-none">React</span>
 											<p className="keep-all text-sm">
-												CRA 나 Vite, Next.js 등의 프레임워크를 사용해서 웹사이트를 구현할 수
+												CRA 나 Vite, Next.js 등의 라이브러리를 사용해서 웹사이트를 구현할 수
 												있습니다.
 											</p>
 										</div>
