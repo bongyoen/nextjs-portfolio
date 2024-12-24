@@ -7,6 +7,7 @@ export default function Contact() {
 		<>
 			<section className={`container mx-auto flex w-full items-center justify-between p-4`}>
 				<div className="flex-1">
+					{/* eslint-disable-next-line react/no-unescaped-entities */}
 					<h2 className="mb-12 mt-8 w-full text-center text-4xl font-black">Let's Work Together</h2>
 				</div>
 				<div
@@ -79,7 +80,7 @@ export default function Contact() {
 									border-input bg-background ring-offset-background
 									placeholder:text-muted-foreground
 									focus-visible:ring-ring
-									flex h-10 w-full rounded-md border px-3 py-2 text-sm
+									flex h-10 w-full rounded-md border px-3 py-2 text-sm text-cyan-800
 									file:border-0 file:bg-transparent file:text-sm file:font-medium
 									focus-visible:outline-none focus-visible:ring-2
 									focus-visible:ring-offset-2
@@ -96,7 +97,7 @@ export default function Contact() {
 									border-input bg-background ring-offset-background
 									placeholder:text-muted-foreground
 									focus-visible:ring-ring
-									flex h-10 w-full rounded-md border px-3 py-2 text-sm
+									flex h-10 w-full rounded-md border px-3 py-2 text-sm text-cyan-800
 									file:border-0 file:bg-transparent file:text-sm file:font-medium
 									focus-visible:outline-none focus-visible:ring-2
 									focus-visible:ring-offset-2
@@ -114,6 +115,7 @@ export default function Contact() {
 								placeholder:text-muted-foreground
 								focus-visible:ring-ring
 								flex min-h-[80px] w-full rounded-md border px-3 py-2 text-sm
+								text-cyan-800
 								focus-visible:outline-none focus-visible:ring-2
 								focus-visible:ring-offset-2
 								disabled:cursor-not-allowed disabled:opacity-50
