@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
 import { ThemeProvider } from '../components/ThemeProvider';
+import Base from '@/src/components/base';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,26 +12,22 @@ export const metadata: Metadata = {
 	description: 'beyondi의 포트폴리오',
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+	children,
+}: Readonly<{ children: ReactNode; auth: ReactNode }>) {
 	return (
 		<html lang="ko" className="h-full" suppressHydrationWarning>
-
-		<body className={`
-			${inter.className}
-			h-full bg-none
-			dark:bg-slate-800
-		`}>
-		<ThemeProvider>{children}</ThemeProvider>
-		</body>
-		{/* <body className={`${inter.className} bg-none h-full dark:bg-slate-800`}> */}
-		{/* <ThemeProvider>{children}</ThemeProvider> */}
-
-		{/* <div id="map" style={{ width: '100%', height: '400px' }} /> */}
-
-		{/* <script> */}
-
-		{/* </script> */}
-		{/* </body> */}
+			<body
+				className={`
+					${inter.className}
+					h-full bg-none
+					dark:bg-slate-800
+				`}
+			>
+				<ThemeProvider>
+					<Base>{children}</Base>
+				</ThemeProvider>
+			</body>
 		</html>
 	);
 }

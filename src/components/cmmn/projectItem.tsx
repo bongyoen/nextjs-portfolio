@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import * as Modal from '../../bloc/modal';
 import { ProjectWkType } from '@/src/components/model/UNION_STR';
+import Link from 'next/link';
 
 type ProjectItemType = {
 	alt: string;
@@ -25,12 +25,7 @@ export default function ProjectItem({
 	img,
 	notion,
 }: ProjectItemType) {
-	const bloc = Modal.useBloc();
-
-	const open = () => {
-		return bloc.next((b, next) => Modal.open({ b, next, notion }));
-	};
-
+	const notionLink = '/projects/project/' + notion;
 	return (
 		<div
 			data-state="active"
@@ -59,23 +54,28 @@ export default function ProjectItem({
 				>
 					<div className="bg-primary/20 flex flex-col space-y-1.5 p-0">
 						<div className="relative flex h-52 w-full items-center justify-center">
-							<button className={'flex w-full flex-row justify-around'} onClick={open}>
-								<Image
-									alt={alt}
-									width="200"
-									height="120"
-									decoding="async"
-									data-nimg="1"
-									className={`
-										absolute bottom-4 mx-auto h-auto max-h-32 w-auto rounded-md
-										object-center shadow-2xl
-									`}
-									src={img}
-									style={{
-										color: ' transparent',
-									}}
-								/>
-							</button>
+							<nav>
+								<Link className={'flex w-full flex-row justify-around'} href={notionLink}>
+									{/* <nav> */}
+									{/* 	<Link href="/login">Open modal</Link> */}
+									{/* </nav> */}
+									<Image
+										alt={alt}
+										width="200"
+										height="120"
+										decoding="async"
+										data-nimg="1"
+										className={`
+											absolute bottom-4 mx-auto h-auto max-h-32 w-auto rounded-md
+											object-center shadow-2xl
+										`}
+										src={img}
+										style={{
+											color: ' transparent',
+										}}
+									/>
+								</Link>
+							</nav>
 						</div>
 					</div>
 					<div className="flex h-32 flex-col gap-y-2 px-4 py-2">

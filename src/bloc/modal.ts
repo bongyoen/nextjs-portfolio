@@ -9,31 +9,27 @@ export type ModalState = {
 	pageId?: string;
 };
 
-export const { getBloc, useBloc, useState } = createHooks<ModalState>(
-	'modal',
-	() => new ModalBloc({ openYn: false }),
-);
-
-type Action = BlocAction<ModalState>;
-type OACtion = {
-	b: Bloc<ModalState>;
-	next: (s: ModalState) => void;
-	notion: string;
-};
-export const close: Action = (_b, next) => next({ openYn: false });
-export const open = async ({ b, next, notion }: OACtion) => {
-	return next({
-		openYn: true,
-		notionPage: (await About(notion)) as ExtendedRecordMap,
-		pageId: notion,
-	});
-};
-
 export class ModalBloc extends Bloc<ModalState> {
 	constructor(initialState = { openYn: false }) {
 		super(initialState);
 	}
 }
+
+export const { useBloc, useState } = createHooks<ModalState>(
+	'modal',
+	() => new ModalBloc({ openYn: false }),
+);
+
+type Action = BlocAction<ModalState>;
+
+export const close: Action = (_b, next) => next({ openYn: false });
+export const open: Action = async (_b, next) => {
+	return next({
+		openYn: true,
+		notionPage: (await About(_b.value.pageId!)) as ExtendedRecordMap,
+		pageId: _b.value.pageId,
+	});
+};
 
 const About = async (page: string) => {
 	const params = { page: page };

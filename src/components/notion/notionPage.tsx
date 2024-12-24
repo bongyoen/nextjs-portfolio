@@ -1,51 +1,47 @@
 'use client';
-
 import '../notion/notion1.scss';
-import React, { useEffect } from 'react';
+import {
+	PartialSelectResponse,
+	PartialSelectResponseList,
+} from '@/src/app/projects/@notion/(.)project/[id]/page';
+import { ExtendedRecordMap } from 'notion-types';
 import { NotionRenderer } from 'react-notion-x';
+import React, { useEffect, useRef } from 'react';
 import Loading from '@/src/components/loading';
-import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
-interface RendererProps {
-	recordMap: any; // 임의로 any
-	rootPageId: string;
-	// skills: PartialSelectResponseList;
-}
-
-type SelectColor =
-	| 'default'
-	| 'gray'
-	| 'brown'
-	| 'orange'
-	| 'yellow'
-	| 'green'
-	| 'blue'
-	| 'purple'
-	| 'pink'
-	| 'red';
-
-export type PartialSelectResponseList = [PartialSelectResponse];
-
-type PartialSelectResponse = {
-	id: string;
-	name: string;
-	color: SelectColor;
+type NotinoRenderType = {
+	notionKey: string;
+	skills: PartialSelectResponseList;
+	recordMap: ExtendedRecordMap;
 };
 
-const Notion_desc = async (page: string) => {
-	const params = { page: page };
-	const res = await axios.get(window.location.origin + `/api/notion_desc`, { params });
-	return res.data;
-};
+const NotionPage = ({ notionKey, skills, recordMap }: NotinoRenderType) => {
+	const notionScrollRef = useRef<HTMLDivElement>(null);
+	const notionOuterRef = useRef<HTMLDivElement>(null);
+	const router = useRouter();
 
-export const NotionPage = ({ recordMap, rootPageId }: RendererProps) => {
-	const [skills, setSkills] = React.useState<PartialSelectResponseList>();
 	useEffect(() => {
-		Notion_desc(rootPageId).then((value) => {
-			console.log(value);
-			setSkills(value as PartialSelectResponseList);
-		});
-	}, [rootPageId]);
+		document.body.style.overflow = 'hidden';
+		notionScrollRef.current?.scrollTo({ left: 0, top: 0 });
+
+		const handleClickOutside = (event: any) => {
+			if (
+				notionOuterRef.current &&
+				notionScrollRef.current &&
+				notionOuterRef.current.contains(event.target) &&
+				!notionScrollRef.current?.contains(event.target)
+			) {
+				router.back();
+			}
+		};
+		document.addEventListener('mousedown', handleClickOutside);
+
+		return () => {
+			document.body.style.overflow = 'auto';
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [router]);
 
 	const CustomComponent: React.FC = () => {
 		return (
@@ -102,18 +98,37 @@ export const NotionPage = ({ recordMap, rootPageId }: RendererProps) => {
 	};
 
 	return (
-		<div className="notion__container">
-			<NotionRenderer
-				recordMap={recordMap}
-				fullPage={true}
-				darkMode={false}
-				rootPageId={rootPageId}
-				previewImages
-				components={{
-					Collection: CustomComponent,
-				}}
-			/>
-		</div>
+		<>
+			<div
+				style={{}}
+				className={`
+					fixed inset-0 z-40 flex h-full w-full items-center justify-center
+					bg-[rgba(229,218,218,0.4)]
+				`}
+				ref={notionOuterRef}
+			>
+				<div
+					className={`
+						absolute left-1/2 top-1/2 z-50 h-5/6 w-5/6 -translate-x-1/2
+						-translate-y-1/2 transform overflow-auto bg-red-400 text-center
+					`}
+					ref={notionScrollRef}
+				>
+					<div className="notion__container">
+						<NotionRenderer
+							recordMap={recordMap}
+							fullPage={true}
+							darkMode={false}
+							rootPageId={notionKey}
+							previewImages
+							components={{
+								Collection: CustomComponent,
+							}}
+						/>
+					</div>
+				</div>
+			</div>
+		</>
 	);
 };
 

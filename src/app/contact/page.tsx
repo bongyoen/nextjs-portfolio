@@ -1,24 +1,23 @@
-import Base from '@/src/components/base';
 import Image from 'next/image';
 import ContactImg from '@/src/styles/contact.svg';
 import { UNION_STR } from '@/src/components/model/UNION_STR';
 
 export default function Contact() {
 	return (
-		<Base>
-			<section className={`
-				container mx-auto flex w-full items-center justify-between p-4
-			`}>
+		<>
+			<section className={`container mx-auto flex w-full items-center justify-between p-4`}>
 				<div className="flex-1">
 					<h2 className="mb-12 mt-8 w-full text-center text-4xl font-black">
 						{/* eslint-disable-next-line react/no-unescaped-entities */}
 						Let's Work Together
 					</h2>
 				</div>
-				<div className={`
-					mx-auto hidden flex-1 flex-col items-center justify-center
-					md:flex
-				`}>
+				<div
+					className={`
+						mx-auto hidden flex-1 flex-col items-center justify-center
+						md:flex
+					`}
+				>
 					<Image
 						alt="contact"
 						fetchPriority="high"
@@ -32,14 +31,18 @@ export default function Contact() {
 					/>
 				</div>
 			</section>
-			<section className={`
-				container flex flex-col gap-y-8
-				md:flex-row
-			`}>
-				<div className={`
-					flex flex-1 flex-col gap-y-8 px-2 text-xl font-bold
-					lg:text-2xl
-				`}>
+			<section
+				className={`
+					container flex flex-col gap-y-8
+					md:flex-row
+				`}
+			>
+				<div
+					className={`
+						flex flex-1 flex-col gap-y-8 px-2 text-xl font-bold
+						lg:text-2xl
+					`}
+				>
 					<a
 						href={`mailto:${UNION_STR.devel.email}`}
 						className="flex items-center gap-x-2"
@@ -59,14 +62,19 @@ export default function Contact() {
 								<path
 									d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772
 									21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4
-									7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z" />
+									7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"
+								/>
 							</svg>
 						</span>
 						<span>{UNION_STR.devel.email}</span>
 					</a>
 				</div>
 				<div className="flex-1">
-					<form className="mx-auto flex w-full max-w-3xl flex-col gap-4 p-4" action="api/email" method="post">
+					<form
+						className="mx-auto flex w-full max-w-3xl flex-col gap-4 p-4"
+						action="api/email"
+						method="post"
+					>
 						<div className="flex w-full flex-col justify-between gap-4">
 							<input
 								type="text"
@@ -144,15 +152,17 @@ export default function Contact() {
 									width="1em"
 									xmlns="http://www.w3.org/2000/svg"
 								>
-									<path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0
+									<path
+										d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0
 									1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1
-									.54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+									.54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"
+									/>
 								</svg>
 							</span>
 						</button>
 					</form>
 				</div>
 			</section>
-		</Base>
+		</>
 	);
 }
