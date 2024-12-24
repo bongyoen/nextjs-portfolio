@@ -123,7 +123,7 @@ export const SKILLS: SkillType[] = [
 	{ skill: 'TypeScript', skillDesc: '', skillType: 'strong' },
 	{ skill: 'JavaScript', skillDesc: '', skillType: 'strong' },
 	{ skill: 'Java', skillDesc: '', skillType: 'strong' },
-	{ skill: 'Angular', skillDesc: '', skillType: 'strong' },
+	{ skill: 'Angulra', skillDesc: '', skillType: 'strong' },
 	{ skill: 'JPA', skillDesc: '', skillType: 'strong' },
 	{ skill: 'Maria DB', skillDesc: '', skillType: 'strong' },
 	{ skill: 'MY-SQL', skillDesc: '', skillType: 'strong' },

@@ -23,9 +23,7 @@ export const POST = async (request: NextRequest) => {
 	};
 
 	await transporter.sendMail(mailData);
-	const host = request.headers.get('host');
-	const protocol = request.headers.get('x-forwarded-proto') || 'http';
-	const redirectUrl = new URL('/contact?ok', `${protocol}://${host}`);
+	const redirectUrl = new URL('/contact?issend=ok', `${process.env.BASE_URL}`);
 	return NextResponse.redirect(redirectUrl);
 };
 

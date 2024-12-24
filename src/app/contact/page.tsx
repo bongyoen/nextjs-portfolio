@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import ContactImg from '@/src/styles/contact.svg';
 import { UNION_STR } from '@/src/model/UNION_STR';
+import Email_alert from '@/src/components/home/email_alert';
 
 export default function Contact() {
 	return (
 		<>
+			<Email_alert />
 			<section className={`container mx-auto flex w-full items-center justify-between p-4`}>
 				<div className="flex-1">
 					{/* eslint-disable-next-line react/no-unescaped-entities */}
