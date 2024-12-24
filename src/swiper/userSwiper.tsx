@@ -2,7 +2,7 @@
 
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -13,26 +13,15 @@ export default function MainSlider() {
 	SwiperCore.use([Navigation, Scrollbar]);
 	useRef<SwiperCore>();
 
-	const [sliderItemEq, setSliderItemEq] = useState<number>(2);
-
-	useEffect(() => {
-		const resizeViewportWidth = () => {
-			console.log(window.innerWidth);
-
-			if (window.innerWidth < 1280 && sliderItemEq === 2) {
-				setSliderItemEq(1);
-			} else if (window.innerWidth >= 1280 && sliderItemEq === 1) {
-				setSliderItemEq(2);
-			}
-		};
-
-		window.addEventListener('resize', resizeViewportWidth);
-	}, [sliderItemEq]);
-
+	const breakpoints = {
+		640: { slidesPerView: 1, spaceBetween: 10 },
+		768: { slidesPerView: 2, spaceBetween: 20 },
+	};
 	return (
 		<Swiper
-			slidesPerView={sliderItemEq}
+			slidesPerView={1}
 			spaceBetween={20}
+			breakpoints={breakpoints}
 			pagination={{
 				clickable: true,
 			}}

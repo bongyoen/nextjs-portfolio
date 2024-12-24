@@ -5,8 +5,9 @@ import developerImg from '@imgs/developer.png';
 import React, { useState } from 'react';
 import { SKILLS, UNION_STR } from '@/src/model/UNION_STR';
 import Skills from '@/src/components/home/skills';
+import About_btn from '@/src/components/home/about_me/about_btn';
 
-type BtnSelecType = {
+export type BtnSelecType = {
 	target: 1 | 2 | 3;
 };
 
@@ -43,74 +44,37 @@ export default function AboutMe() {
 					/>
 				</div>
 				<div className="flex-1">
-					<div>
+					<div className={`flex flex-col items-center`}>
 						<div
 							className={`
-								text-muted-foreground grid h-12 w-full items-center justify-center
-								rounded-full p-1
+								text-muted-foreground light grid h-max w-full items-center
+								justify-center rounded-full border bg-white p-1 text-center
 								dark:border-none
-								lg:grid-cols-3
-								xl:border xl:bg-white
+								max-lg:rounded-3xl
+								max-sm:w-56
+								sm:w-56
+								lg:w-96 lg:grid-cols-3
 							`}
 							style={{ outline: 'none' }}
 						>
-							<button
-								type="button"
-								onClick={() => setBtnSelect({ target: 1 })}
-								className={`
-									${btnSelect.target === 1 ? 'bg-blue-600' : ''}
-									ring-offset-background
-									focus-visible:ring-ring
-									data-[state=active]:bg-primary
-									inline-flex w-48 items-center justify-center whitespace-nowrap
-									rounded-full px-3 py-1.5 font-medium text-black transition-all
-									focus-visible:outline-none focus-visible:ring-2
-									focus-visible:ring-offset-2
-									disabled:pointer-events-none disabled:opacity-50
-									data-[state=active]:shadow-sm
-									lg:w-auto
-								`}
-							>
-								자기소개
-							</button>
-							<button
-								type="button"
-								onClick={() => setBtnSelect({ target: 2 })}
-								className={`
-									${btnSelect.target === 2 ? 'bg-blue-600' : ''}
-									ring-offset-background
-									focus-visible:ring-ring
-									data-[state=active]:bg-primary
-									inline-flex w-48 items-center justify-center whitespace-nowrap
-									rounded-full px-3 py-1.5 font-medium text-black transition-all
-									focus-visible:outline-none focus-visible:ring-2
-									focus-visible:ring-offset-2
-									disabled:pointer-events-none disabled:opacity-50
-									data-[state=active]:shadow-sm
-									lg:w-auto
-								`}
-							>
-								경험
-							</button>
-							<button
-								type="button"
-								onClick={() => setBtnSelect({ target: 3 })}
-								className={`
-									${btnSelect.target === 3 ? 'bg-blue-600' : ''}
-									ring-offset-background
-									focus-visible:ring-ring
-									data-[state=active]:bg-primary
-									inline-flex w-48 items-center justify-center whitespace-nowrap
-									rounded-full px-3 py-1.5 font-medium text-black transition-all
-									focus-visible:outline-none focus-visible:ring-2
-									focus-visible:ring-offset-2
-									disabled:pointer-events-none disabled:opacity-50
-									data-[state=active]:shadow-sm
-									lg:w-auto
-								`}
-							>
-								기술
-							</button>
+							<About_btn
+								title={'자기소개'}
+								btnSelect={btnSelect}
+								setBtnSelect={setBtnSelect}
+								targetNum={{ target: 1 }}
+							/>
+							<About_btn
+								title={'경험'}
+								btnSelect={btnSelect}
+								setBtnSelect={setBtnSelect}
+								targetNum={{ target: 2 }}
+							/>
+							<About_btn
+								title={'기술'}
+								btnSelect={btnSelect}
+								setBtnSelect={setBtnSelect}
+								targetNum={{ target: 3 }}
+							/>
 						</div>
 						<div
 							className={`
