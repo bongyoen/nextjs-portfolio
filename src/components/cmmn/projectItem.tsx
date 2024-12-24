@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
@@ -45,65 +43,67 @@ export default function ProjectItem({
 			}}
 		>
 			<div className="relative">
-				<div
-					className={`
-						bg-card text-card-foreground group relative mx-auto max-w-sm
-						overflow-hidden rounded-lg border shadow-sm transition-all
-						hover:shadow-lg
-					`}
-				>
-					<div className="bg-primary/20 flex flex-col space-y-1.5 p-0">
-						<div className="relative flex h-52 w-full items-center justify-center">
-							<nav>
-								<Link className={'flex w-full flex-row justify-around'} href={notionLink}>
-									<Image
-										alt={alt}
-										width="200"
-										height="120"
-										decoding="async"
-										data-nimg="1"
-										className={`
-											absolute bottom-4 mx-auto h-auto max-h-32 w-auto rounded-md
-											object-center shadow-2xl
-										`}
-										src={img}
-										style={{
-											color: ' transparent',
-										}}
-									/>
-								</Link>
-							</nav>
-						</div>
-					</div>
-					<div className="flex h-32 flex-col gap-y-2 px-4 py-2">
-						<div
-							className={`
-								focus:ring-ring
-								bg-primary text-primary-foreground
-								hover:bg-primary/80
-								absolute left-5 top-4 mb-2 inline-flex items-center rounded-full border
-								border-transparent px-2.5 py-0.5 text-sm font-medium transition-colors
-								focus:outline-none focus:ring-2 focus:ring-offset-2
-							`}
-						>
-							{mainTag}
-						</div>
-						<h4 className="text-2xl font-bold">{alt}</h4>
-						<p className="text-muted-foreground break-keep text-sm">{children}</p>
-					</div>
+				<Link href={notionLink}>
 					<div
 						className={`
-							flex w-full flex-col items-center gap-y-2 p-6 pt-0 text-start text-sm
+							bg-card text-card-foreground group relative mx-auto max-w-sm
+							overflow-hidden rounded-lg border shadow-sm transition-all
+							hover:shadow-lg
 						`}
 					>
-						<p className="w-full text-start">{type} 프로젝트</p>
-						<div className=" flex w-full flex-wrap gap-x-1.5 text-start">
-							{hashTags.map((value) => (
-								<span key={value}>#{value}</span>
-							))}
+						<div className="bg-primary/20 flex flex-col space-y-1.5 p-0">
+							<div className="relative flex h-52 w-full items-center justify-center">
+								<nav>
+									<div className={'flex w-full flex-row justify-around'}>
+										<Image
+											alt={alt}
+											width="200"
+											height="120"
+											decoding="async"
+											data-nimg="1"
+											className={`
+												absolute bottom-4 mx-auto h-auto max-h-32 w-auto rounded-md
+												object-center shadow-2xl
+											`}
+											src={img}
+											style={{
+												color: ' transparent',
+											}}
+										/>
+									</div>
+								</nav>
+							</div>
+						</div>
+						<div className="flex h-32 flex-col gap-y-2 px-4 py-2">
+							<div
+								className={`
+									focus:ring-ring
+									bg-primary text-primary-foreground
+									hover:bg-primary/80
+									absolute left-5 top-4 mb-2 inline-flex items-center rounded-full border
+									border-transparent px-2.5 py-0.5 text-sm font-medium transition-colors
+									focus:outline-none focus:ring-2 focus:ring-offset-2
+								`}
+							>
+								{mainTag}
+							</div>
+							<h4 className="text-2xl font-bold">{alt}</h4>
+							<p className="text-muted-foreground break-keep text-sm">{children}</p>
+						</div>
+						<div
+							className={`
+								flex w-full flex-col items-center gap-y-2 p-6 pt-0 text-start text-sm
+							`}
+						>
+							<p className="w-full text-start">{type} 프로젝트</p>
+							<div className=" flex w-full flex-wrap gap-x-1.5 text-start">
+								{hashTags.map((value) => (
+									<span key={value}>#{value}</span>
+								))}
+							</div>
 						</div>
 					</div>
-				</div>
+				</Link>
 			</div>
 		</div>
 	);

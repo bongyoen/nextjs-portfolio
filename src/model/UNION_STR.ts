@@ -96,7 +96,7 @@ export const UNION_STR: unionStrType = {
 			img: loginLogo,
 			notion: '7dd7ed74f8d84c92b60a9f0a312d37e4',
 			wkType: '개인',
-			desc: '',
+			desc: 'NestJS기반의 TypeOrm과 Jwt를 활용한 로그인 로직 구현',
 			tag: ['Nest', 'TypeScript', 'TypeOrm', 'Jwt'],
 			mainTag: 'Nest',
 		},

@@ -12,9 +12,7 @@ export type MyButtonProps = {
 export default function MyButton(props: MyButtonProps) {
 	const { size, color, children } = props;
 
-	const testAlert = () => {
-		alert('Hello World');
-	};
+	const testAlert = () => {};
 
 	const colorProp = {
 		primary: `border: 3px solid #55EFC4; background-color: #55EFC4`,
