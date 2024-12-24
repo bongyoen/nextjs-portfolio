@@ -6,8 +6,8 @@ export default function Intro() {
 	return (
 		<section
 			className={`
-			relative flex h-full min-h-screen flex-grow flex-col gap-x-8 py-24
-		`}
+				relative flex h-full min-h-screen flex-grow flex-col gap-x-8 py-24
+			`}
 		>
 			<div className="flex justify-center gap-x-8">
 				<div className="mx-auto flex w-full flex-col justify-center gap-y-1">
@@ -23,7 +23,6 @@ export default function Intro() {
 								text-transparent
 							`}
 						>
-							{process.env.DB_HOST}
 							안녕하세요, 저는
 						</span>
 						<br />
