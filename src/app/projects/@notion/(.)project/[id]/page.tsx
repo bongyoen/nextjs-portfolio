@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { ExtendedRecordMap } from 'notion-types';
 import NotionPage from '@/src/components/notion/notionPage';
+import { Suspense } from 'react';
+import Loading from '@/src/app/projects/@notion/(.)project/[id]/loading';
 
 export type PartialSelectResponseList = [PartialSelectResponse];
 type SelectColor =
@@ -22,13 +24,13 @@ export type PartialSelectResponse = {
 
 const Notion_desc = async (page: string) => {
 	const params = { page: page };
-	const res = await axios.get('http://127.0.0.1:3000' + `/api/notion_desc`, { params });
+	const res = await axios.get(`${process.env.BASE_URL}` + `/api/notion_desc`, { params });
 	return res.data;
 };
 
 const About = async (page: string) => {
 	const params = { page: page };
-	const res = await axios.get('http://127.0.0.1:3000' + `/api/notion`, { params });
+	const res = await axios.get(`${process.env.BASE_URL}` + `/api/notion`, { params });
 	return res.data;
 };
 
@@ -38,7 +40,13 @@ async function Page({ params }: any) {
 	const skills = (await Notion_desc(notionKey)) as PartialSelectResponseList;
 	const recordMap = (await About(notionKey)) as ExtendedRecordMap;
 
-	return <NotionPage notionKey={notionKey} skills={skills} recordMap={recordMap} />;
+	return (
+		<>
+			<Suspense fallback={<Loading />}>
+				<NotionPage notionKey={notionKey} skills={skills} recordMap={recordMap} />
+			</Suspense>
+		</>
+	);
 }
 
 export default Page;

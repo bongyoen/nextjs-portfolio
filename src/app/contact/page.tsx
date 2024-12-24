@@ -1,16 +1,13 @@
 import Image from 'next/image';
 import ContactImg from '@/src/styles/contact.svg';
-import { UNION_STR } from '@/src/components/model/UNION_STR';
+import { UNION_STR } from '@/src/model/UNION_STR';
 
 export default function Contact() {
 	return (
 		<>
 			<section className={`container mx-auto flex w-full items-center justify-between p-4`}>
 				<div className="flex-1">
-					<h2 className="mb-12 mt-8 w-full text-center text-4xl font-black">
-						{/* eslint-disable-next-line react/no-unescaped-entities */}
-						Let's Work Together
-					</h2>
+					<h2 className="mb-12 mt-8 w-full text-center text-4xl font-black">Let's Work Together</h2>
 				</div>
 				<div
 					className={`

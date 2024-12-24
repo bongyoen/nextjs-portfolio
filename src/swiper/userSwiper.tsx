@@ -3,10 +3,10 @@
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useRef, useState } from 'react';
-import { Navigation, Scrollbar, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { PJ_MAP, ProjectType } from '@/src/components/model/UNION_STR';
+import { PJ_MAP, ProjectType } from '@/src/model/UNION_STR';
 import Image from 'next/image';
 
 export default function MainSlider() {

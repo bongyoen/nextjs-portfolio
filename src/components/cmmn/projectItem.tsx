@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import { ProjectWkType } from '@/src/components/model/UNION_STR';
+import { ProjectWkType } from '@/src/model/UNION_STR';
 import Link from 'next/link';
 
 type ProjectItemType = {

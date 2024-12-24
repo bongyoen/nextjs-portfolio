@@ -1,4 +1,4 @@
-import { PJ_MAP, ProjectType } from '@/src/components/model/UNION_STR';
+import { PJ_MAP, ProjectType } from '@/src/model/UNION_STR';
 import ProjectItem from '@/src/components/cmmn/projectItem';
 
 export default function Projects() {

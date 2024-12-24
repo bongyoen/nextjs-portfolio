@@ -44,7 +44,7 @@ export const UNION_STR: unionStrType = {
 			wkType: '업무',
 			desc: '안경, 콘택트 유통 제조사에 가장 최적화된 업계 전문 프로그램으로 전자 주문과 ERP 기능',
 			tag: ['Angulra', 'Ts', 'SpringBoot', 'Mysql'],
-			mainTag: "Angulra"
+			mainTag: 'Angulra',
 		},
 		uibox: {
 			nm: 'UIBOX',
@@ -53,7 +53,7 @@ export const UNION_STR: unionStrType = {
 			wkType: '업무',
 			desc: '안경원 전문 B2B 쇼핑몰',
 			tag: ['Angulra', 'Ts', 'SpringBoot', 'Mysql'],
-			mainTag: "Angulra"
+			mainTag: 'Angulra',
 		},
 		vpn: {
 			nm: '4방식 Vpn 서비스',
@@ -62,7 +62,7 @@ export const UNION_STR: unionStrType = {
 			wkType: '업무',
 			desc: 'PPTP, L2TP, OVPN, IKEv2 연결방식을 지원하는 VPN 서비스 시스템',
 			tag: ['Ubuntu', 'OpenVpn', 'StrongSwan', 'Iptables', 'L2tpd', 'Pptpd', 'Tc'],
-			mainTag: "Ubuntu"
+			mainTag: 'Ubuntu',
 		},
 		autoAd: {
 			nm: '네이비드',
@@ -71,7 +71,7 @@ export const UNION_STR: unionStrType = {
 			wkType: '업무',
 			desc: '네이버 파워링크 자동 입찰 서비스',
 			tag: ['Electron', 'SqlLite', 'React', 'Ts'],
-			mainTag: "Electron"
+			mainTag: 'Electron',
 		},
 		mouse: {
 			nm: 'BLE MOUSE',
@@ -80,7 +80,7 @@ export const UNION_STR: unionStrType = {
 			wkType: '개인',
 			desc: 'Ble연결을 통한 Android 스마트폰의 블루투스 마우스 이용제품(For Windows)',
 			tag: ['Flutter', 'Ble', 'HID', 'SqlLite'],
-			mainTag: "Flutter"
+			mainTag: 'Flutter',
 		},
 		portfolio: {
 			nm: '포트폴리오',
@@ -89,7 +89,7 @@ export const UNION_STR: unionStrType = {
 			wkType: '개인',
 			desc: 'Cloud Plaform을 통한 nextJs 포트폴리오 사이트',
 			tag: ['NextJs', 'TypeScript', 'Postgre', 'OracleCloud', 'Docker', 'Nginx', 'GitAction'],
-			mainTag: "NextJs"
+			mainTag: 'NextJs',
 		},
 		login: {
 			nm: 'Nest, TypeOrm, Jwt',
@@ -98,7 +98,7 @@ export const UNION_STR: unionStrType = {
 			wkType: '개인',
 			desc: '',
 			tag: ['Nest', 'TypeScript', 'TypeOrm', 'Jwt'],
-			mainTag: "Nest"
+			mainTag: 'Nest',
 		},
 	},
 	devel: {

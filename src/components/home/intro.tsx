@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import MePng from '@/src/styles/profile.webp';
-import { UNION_STR } from '@/src/components/model/UNION_STR';
+import { UNION_STR } from '@/src/model/UNION_STR';
 
 export default function Intro() {
 	return (
-		<section className={`
+		<section
+			className={`
 			relative flex h-full min-h-screen flex-grow flex-col gap-x-8 py-24
-		`}>
+		`}
+		>
 			<div className="flex justify-center gap-x-8">
 				<div className="mx-auto flex w-full flex-col justify-center gap-y-1">
 					<h1
