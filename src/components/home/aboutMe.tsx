@@ -46,7 +46,6 @@ export default function AboutMe() {
 					<div>
 						<div
 							className={`
-								dark:md:bg-secondary
 								text-muted-foreground grid h-12 w-full items-center justify-center
 								rounded-full p-1
 								dark:border-none
@@ -384,7 +383,7 @@ export default function AboutMe() {
 										<h4 className="border-b text-xl font-bold">Skills</h4>
 										<Skills skills={SKILLS} />
 									</div>
-									<div className="flex flex-col gap-y-4">
+									<div className="mt-5 flex flex-col gap-y-4">
 										<h4 className="border-b text-xl font-bold">Tools</h4>
 										<div className={`grid grid-cols-3 text-center`}>
 											<span className="rounded-full border-2 px-2 font-bold">VsCode</span>
