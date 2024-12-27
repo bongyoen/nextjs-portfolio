@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { ExtendedRecordMap } from 'notion-types';
 import NotionPage from '@/src/components/notion/notionPage';
 import { Suspense } from 'react';
@@ -23,16 +22,28 @@ export type PartialSelectResponse = {
 };
 
 const Notion_desc = async (page: string) => {
-	const params = { page: page };
-	const res = await axios.get(`${process.env.BASE_URL}` + `/api/notion_desc`, { params });
-	return res.data;
+	const params = new URLSearchParams({ page: page });
+	const res = await fetch(`${process.env.BASE_URL}/api/notion_desc?${params.toString()}`);
+	return await res.json();
 };
 
 const About = async (page: string) => {
-	const params = { page: page };
-	const res = await axios.get(`${process.env.BASE_URL}` + `/api/notion`, { params });
-	return res.data;
+	const params = new URLSearchParams({ page: page });
+	const res = await fetch(`${process.env.BASE_URL}/api/notion?${params.toString()}`);
+	return await res.json();
 };
+
+// const Notion_desc = async (page: string) => {
+// 	const params = { page: page };
+// 	const res = await axios.get(`${process.env.BASE_URL}` + `/api/notion_desc`, { params });
+// 	return res.data;
+// };
+
+// const About = async (page: string) => {
+// 	const params = { page: page };
+// 	const res = await axios.get(`${process.env.BASE_URL}` + `/api/notion`, { params });
+// 	return res.data;
+// };
 
 async function Page({ params }: any) {
 	const notionKey = params.id;
