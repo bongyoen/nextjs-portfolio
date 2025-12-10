@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: set-variables
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download Environment Variables Archive
         uses: actions/download-artifact@v3
         with:
