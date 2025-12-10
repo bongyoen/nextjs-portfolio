@@ -9,7 +9,7 @@
 ## 기술 스택
 
 - `NextJs`, `TypeScript`, `Tailwind CSS`, `Oracl Cloud Plaform`, `Postgres`, `Docker Compose`, `Git Action`
-
+1
 ---
 
 ## 주요 기능
