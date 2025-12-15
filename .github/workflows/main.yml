@@ -15,7 +15,13 @@ jobs:
           NOTION_TOKEN: ${{secrets.NOTION_TOKEN}}
           NOTION_DATABASE_ID: ${{secrets.NOTION_DATABASE_ID}}
           BASE_URL: ${{secrets.BASE_URL}}
+          host: ${{secrets.ORACLE_CLOUD_DOMAIN}}
+          username: ${{secrets.ORACLE_CLOUD_USER}}
+          key: ${{secrets.ORACLE_CLOUD_KEY}}
         run: |
+          echo "host=$host" >> .env.production
+          echo "username=$username" >> .env.production
+          echo "key=$key" >> .env.production
           echo "AUTH_USER=$AUTH_USER" >> .env.production
           echo "AUTH_PASS=$AUTH_PASS" >> .env.production
           echo "NOTION_TOKEN=$NOTION_TOKEN" >> .env.production
