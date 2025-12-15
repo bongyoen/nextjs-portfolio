@@ -6,7 +6,7 @@ on:
 
 jobs:
   set-variables:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Generate Environment Variables File for Production
         env:
@@ -30,7 +30,7 @@ jobs:
           path: env.tar.gz
 
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: set-variables
     steps:
       - uses: actions/checkout@v4
@@ -59,7 +59,7 @@ jobs:
         run: docker push kuhj7593/nextjs-portfolio:latest
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build-and-push
     steps:
       - name: deploy
