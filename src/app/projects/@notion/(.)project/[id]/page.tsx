@@ -46,15 +46,17 @@ const About = async (page: string) => {
 // };
 
 async function Page({ params }: any) {
-	const notionKey = params.id;
+	const {id} = await params;
 
-	const skills = (await Notion_desc(notionKey)) as PartialSelectResponseList;
-	const recordMap = (await About(notionKey)) as ExtendedRecordMap;
+	console.log('id : ', id);
+
+	const skills = (await Notion_desc(id)) as PartialSelectResponseList;
+	const recordMap = (await About(id)) as ExtendedRecordMap;
 
 	return (
 		<>
 			<Suspense fallback={<Loading />}>
-				<NotionPage notionKey={notionKey} skills={skills} recordMap={recordMap} />
+				<NotionPage notionKey={id} skills={skills} recordMap={recordMap} />
 			</Suspense>
 		</>
 	);

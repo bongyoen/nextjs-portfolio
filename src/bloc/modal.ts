@@ -33,6 +33,5 @@ export const open: Action = async (_b, next) => {
 const About = async (page: string) => {
 	const params = new URLSearchParams({ page: page });
 	const res = await fetch(`${process.env.BASE_URL}/api/notion?${params.toString()}`);
-	const data = await res.json();
-	return data;
+	return await res.json();
 };
