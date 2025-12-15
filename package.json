@@ -10,6 +10,9 @@
 		"format": "prettier --check --ignore-path .gitignore .",
 		"format:fix": "prettier --write --ignore-path .gitignore ."
 	},
+	"overrides": {
+		"glob": "^11.1.0"
+	},
 	"dependencies": {
 		"@bloc-js/bloc": "^3.1.5",
 		"@bloc-js/nextjs-bloc": "^3.2.10",
